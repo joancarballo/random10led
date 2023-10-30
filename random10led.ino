@@ -4,11 +4,10 @@ int ledPin3 = 11;
 int ledPin4 = 10;
 int ledPin5 = 9;
 int ledPin6 = 8;
-int ledPin7 = 7;
-int ledPin8 = 6; 
-int ledPin9 = 5;
-int ledPin10 = 4;
-unsigned long minutes = 1020000;
+// int ledPin7 = 7;
+// int ledPin8 = 6; 
+// int ledPin9 = 5;
+// int ledPin10 = 4;
 
 void setup ()  {
   pinMode(ledPin1, OUTPUT); 
@@ -17,7 +16,7 @@ void setup ()  {
   pinMode(ledPin4, OUTPUT); 
   pinMode(ledPin5, OUTPUT); 
   pinMode(ledPin6, OUTPUT); 
-  pinMode(ledPin7, OUTPUT); 
+  // pinMode(ledPin7, OUTPUT); 
   // pinMode(ledPin8, OUTPUT);
   // pinMode(ledPin9, OUTPUT); 
   // pinMode(ledPin10, OUTPUT);
@@ -27,7 +26,7 @@ void setup ()  {
   digitalWrite(ledPin4,HIGH);
   digitalWrite(ledPin5,HIGH);
   digitalWrite(ledPin6,HIGH);
-  digitalWrite(ledPin7,HIGH);
+  // digitalWrite(ledPin7,HIGH);
   // digitalWrite(ledPin8,HIGH);
   // digitalWrite(ledPin9,HIGH);
   // digitalWrite(ledPin10,HIGH);
@@ -38,7 +37,7 @@ void setup ()  {
   digitalWrite(ledPin4,LOW);
   digitalWrite(ledPin5,LOW);
   digitalWrite(ledPin6,LOW);
-  digitalWrite(ledPin7,LOW);
+  // digitalWrite(ledPin7,LOW);
   // digitalWrite(ledPin8,LOW);
   // digitalWrite(ledPin9,LOW);
   // digitalWrite(ledPin10,LOW);
@@ -46,12 +45,10 @@ void setup ()  {
 } 
 
 void loop() { 
-  int myLeds[] = {ledPin1, ledPin2, ledPin3, ledPin4, ledPin5, ledPin6, ledPin7};
-  if (millis() < minutes){
-    int pinSelected = myLeds[random(1, 7)];
-    digitalWrite(pinSelected,HIGH);
-    delay(random(500, 2900));
-    digitalWrite(pinSelected,LOW);
-    delay(500);
-  }
+  int myLeds[] = {ledPin1, ledPin2, ledPin3, ledPin4, ledPin5, ledPin6};
+  int pinSelected = myLeds[random(1, 7)];
+  digitalWrite(pinSelected,HIGH);
+  delay(random(500, 1500));
+  digitalWrite(pinSelected,LOW);
+  delay(100);
 }
